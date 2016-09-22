@@ -10,6 +10,8 @@ This repository contains a bunch of files to go along with a SIPHON blog post on
 * **dput.cf** - Config file for `dput`, used in Dockerfile
 * **git-snapshot** - Shell script used by build-snapshot to generate a temporary version number in the debian changelog
 
+## Licensing
+All SIPHON original code is licensed under the MIT license. Code derived from dh-virtualenv-mold - specifically the `debian/rules` file - is licensed under the Apache v2 license as indicated in the header of the file.
 
 ## Influences
 * [jenkins-debian-glue](https://github.com/mika/jenkins-debian-glue)
