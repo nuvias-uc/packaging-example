@@ -12,5 +12,5 @@ This repository contains a bunch of files to go along with a SIPHON blog post on
 
 
 ## Influences
-*[jenkins-debian-glue](https://github.com/mika/jenkins-debian-glue)
-*[dh-virtualenv-mold](https://github.com/Springerle/dh-virtualenv-mold)
+* [jenkins-debian-glue](https://github.com/mika/jenkins-debian-glue)
+* [dh-virtualenv-mold](https://github.com/Springerle/dh-virtualenv-mold)
