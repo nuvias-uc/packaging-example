@@ -1,0 +1,5 @@
+[repo]
+fqdn=repo.repo.com
+incoming=/incoming/
+method=scp
+login=repo

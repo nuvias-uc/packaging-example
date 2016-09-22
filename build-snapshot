@@ -1,0 +1,3 @@
+git-snapshot
+make deb
+dput -u repo ../*.changes

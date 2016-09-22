@@ -1,0 +1,16 @@
+#!/bin/sh
+
+DIST=`dpkg-parsechangelog --show-field Distribution`
+VER=`dpkg-parsechangelog --show-field Version | sed 's/\([^~]*\)~.*/\1/'`
+DCH_OPTS='-U -b'
+if [ $DIST != 'UNRELEASED' ]
+    then
+        VER=$VER+0
+        DCH_OPTS="$DCH_OPTS"
+fi
+
+DATE=`date +%Y%m%d%H%M%S`
+GIT=`git rev-parse --short HEAD`
+VER=$VER~$DATE+git$GIT
+DCH_OPTS="$DCH_OPTS -v $VER -D development"
+dch $DCH_OPTS Snapshot

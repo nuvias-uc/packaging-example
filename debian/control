@@ -1,0 +1,13 @@
+Source: package
+Section: python
+Priority: extra
+Maintainer: Sean Sabbage <s.sabbage@siphonnetworks.com>
+Build-Depends: debhelper (>= 9), python3, dh-virtualenv (>= 0.7), postgresql-server-dev-9.3
+Standards-Version: 3.9.5
+
+Package: package
+Architecture: any
+Pre-Depends: dpkg (>= 1.16.1), python3-minimal
+Depends: python3
+Description: Application
+ Application

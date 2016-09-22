@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+
+PACKAGE=$(shell dh_listpackages)
+VERSION=$(shell dpkg-parsechangelog --show-field Version)
+SDIST_DIR=debian/$(PACKAGE)-$(VERSION)
+
+clean:
+	test ! -d dist || rm -rf dist
+	test ! -d $(SDIST_DIR) || rm -rf $(SDIST_DIR)
+	dh $@
+
+build-arch:
+	python3 setup.py sdist --formats tar
+	mkdir -p $(SDIST_DIR)
+	tar -x -C $(SDIST_DIR) --strip-components=1 --exclude '*.egg-info' -f dist/*.tar
+	dh $@ --with python-virtualenv --sourcedirectory $(SDIST_DIR)
+
+%:
+	dh $@ --with python-virtualenv --sourcedirectory $(SDIST_DIR)
+
+override_dh_virtualenv:
+	dh_virtualenv --python python3
